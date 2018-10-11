@@ -9,19 +9,15 @@ public class CubeManager : MonoBehaviour {
 
     public void Start()
     {
-        
+        GameManager.cubeManager = this;
     }
 
-    public void SpawnCubes(List<Transform>positions)
+    public void SpawnCubes(List<Transform> positions)
     {
-        int randIndex = Random.Range(0, positions.Count);
-        for(int i = 0; i < positions.Count; i++)
+        for (int i = 0; i < positions.Count; i++)
         {
-            if (i != randIndex)
-            {
-                Cube newCube = Instantiate(cubePrefab, positions[i].position, positions[i].rotation).GetComponent<Cube>();
-                currentCubes.Add(newCube);
-            }
+            Cube newCube = Instantiate(cubePrefab, positions[i].position, positions[i].rotation).GetComponent<Cube>();
+            currentCubes.Add(newCube);
         }
     }
 

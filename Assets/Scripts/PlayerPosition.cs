@@ -4,21 +4,9 @@ using UnityEngine;
 
 public class PlayerPosition : MonoBehaviour {
 
-    private int iD = 0;
-    public int ID
-    {
-        get
-        {
-            return iD;
-        }
-
-        set
-        {
-            //iD = value;
-        }
-    }
+    public Transform instantiator;
 
     void Start () {
-        iD = GameManager.GetID();
+        GameManager.playerPositions.Add(this);
     }
 }

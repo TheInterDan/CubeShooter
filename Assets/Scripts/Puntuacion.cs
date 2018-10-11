@@ -7,10 +7,10 @@ public class Puntuacion : MonoBehaviour {
 
     public Text textoContador;
 
-    /*private void Start()
+    private void Start()
     {
-        updateScore(15);
-    }*/
+        GameManager.puntuacion = this;
+    }
 
     public void UpdateScore(int points)
     {
