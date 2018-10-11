@@ -7,6 +7,11 @@ public static class GameManager {
     public static Puntuacion puntuacion;
     static int score;
 
+    public static CubeManager cubeManager;
+    public static List<PlayerPosition> playerPositions = new List<PlayerPosition>();
+
+    public static bool gameStarted = false;
+
     public static int AddScore(int add = 1)
     {
         score += add;
@@ -20,8 +25,6 @@ public static class GameManager {
     {
         return id++;
     }*/
-
-    public static CubeManager cubeManager;
 
     public static void CubeDestroyed()
     {
@@ -42,5 +45,9 @@ public static class GameManager {
         }
     }
 
-    public static List<PlayerPosition> playerPositions = new List<PlayerPosition>();
+    public static void StartGame()
+    {
+        CubeDestroyed();
+        gameStarted = true;
+    }
 }
