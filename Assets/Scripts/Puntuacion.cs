@@ -7,11 +7,12 @@ public class Puntuacion : MonoBehaviour {
 
     public Text textoContador;
 
-    private void Start()
+    /*private void Start()
     {
         updateScore(15);
-    }
-    public void updateScore(int points)
+    }*/
+
+    public void UpdateScore(int points)
     {
         textoContador.text ="Puntuación: " + points.ToString();
 
