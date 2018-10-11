@@ -21,6 +21,12 @@ public class CubeManager : MonoBehaviour {
         }
     }
 
+    public void DestroyCube(GameObject cube)
+    {
+        currentCubes.Remove(cube.GetComponent<Cube>());
+        Destroy(cube.gameObject);
+    }
+
     public bool AreStillCubes()
     {
         return currentCubes.Count != 0;

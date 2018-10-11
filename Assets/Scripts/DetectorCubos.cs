@@ -8,11 +8,9 @@ public class DetectorCubos : MonoBehaviour {
 
    void OnTriggerEnter(Collider other)
    {
-        Debug.Log("detected");
-      if (other.gameObject.tag == "detector")
+      if (other.gameObject.tag == "Cube")
       {
-            Destroy(other.gameObject);
-            GameManager.CubeDestroyed();
+            GameManager.DestroyCube(other.gameObject);
       }
    }
 }
