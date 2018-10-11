@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour {
 
+<<<<<<< HEAD
 
     public Vector3 direction = Vector3.back;
     public float speed = 1;
