@@ -8,29 +8,41 @@ public class Player : MonoBehaviour {
 
     Transform destino;
 
-    void Update() {
+    private void Start()
+    {
+        destino = transform;
+    }
 
+    void Update() {
         DetectInput();
         Move();
     }
+
     void DetectInput()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (GameManager.gameStarted)
             {
-                if (hit.transform.tag == "PlayerPosition")
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
-                    destino = hit.transform;
+                    if (hit.transform.tag == "PlayerPosition")
+                    {
+                        destino = hit.transform;
+                    }
                 }
+            }
+            else
+            {
+                GameManager.StartGame();
             }
         }
     }
     void Move()
     {
-        this.transform.position = Vector3.Lerp(this.transform.position, this.destino.position, this.speed * Time.deltaTime);
+        this.transform.position = Vector3.Lerp(transform.position, destino.position, speed * Time.deltaTime);
     }
 }
