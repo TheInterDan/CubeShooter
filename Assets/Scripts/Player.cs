@@ -8,9 +8,12 @@ public class Player : MonoBehaviour {
 
     Transform destino;
 
+    GameObject initialText;
+
     private void Start()
     {
         destino = transform;
+        
     }
 
     void Update() {
@@ -38,6 +41,7 @@ public class Player : MonoBehaviour {
             else
             {
                 GameManager.StartGame();
+                Destroy(initialText);
             }
         }
     }
