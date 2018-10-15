@@ -5,6 +5,7 @@ using UnityEngine;
 public class Main : MonoBehaviour {
 
     public GameObject title;
+    public GameObject gameOverTitle;
 
     void Start () {
         GameManager.main = this;
@@ -13,5 +14,10 @@ public class Main : MonoBehaviour {
     public void QuitTitle()
     {
         title.SetActive(false);
+    }
+
+    public void ShowGameOver()
+    {
+        gameOverTitle.SetActive(true);
     }
 }

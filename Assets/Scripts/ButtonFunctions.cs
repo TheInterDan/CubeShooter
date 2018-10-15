@@ -13,4 +13,9 @@ public class ButtonFunctions : MonoBehaviour
     {
         GameManager.StartGame();
     }
+
+    public void Restart()
+    {
+        GameManager.Restart();
+    }
 }
