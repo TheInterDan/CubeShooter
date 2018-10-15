@@ -14,7 +14,7 @@ public static class GameManager {
     public static List<PlayerPosition> playerPositions = new List<PlayerPosition>();
 
     public static bool gameStarted = false;
-    public static bool auto = true;
+    public static bool auto = false;
 
     public static Player player;
 
@@ -80,6 +80,7 @@ public static class GameManager {
         if (!gameStarted)
         {
             auto = autoPlay;
+            if(!auto) player.NewTarget(playerPositions[0].transform);
             SpawnWave();
             gameStarted = true;
             main.QuitTitle();
@@ -91,5 +92,6 @@ public static class GameManager {
         gameStarted = false;
         score = 0;
         SceneManager.LoadScene(0);
+        auto = false;
     }
 }
