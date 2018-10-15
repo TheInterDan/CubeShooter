@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4999081002907938}
   - component: {fileID: 33883496894907522}
   - component: {fileID: 23569041606457884}
+  - component: {fileID: 114695504520937094}
   m_Layer: 0
   m_Name: Gizmo
   m_TagString: Untagged
@@ -167,3 +168,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instantiator: {fileID: 4256462751510806}
+--- !u!114 &114695504520937094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1129652833602134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbba5ec4985755d4ca45163e0f9ad8ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 45
