@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
 
     public int speed;
 
+    public LayerMask layerMask;
+
     Transform destino;
 
     GameObject initialText;
@@ -30,18 +32,13 @@ public class Player : MonoBehaviour {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
                 {
                     if (hit.transform.tag == "PlayerPosition")
                     {
                         destino = hit.transform;
                     }
                 }
-            }
-            else
-            {
-                GameManager.StartGame();
-                Destroy(initialText);
             }
         }
     }

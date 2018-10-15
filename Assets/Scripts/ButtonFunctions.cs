@@ -8,4 +8,9 @@ public class ButtonFunctions : MonoBehaviour
     {
         GameManager.StartGame(true);
     }
+
+    public void StartGame()
+    {
+        GameManager.StartGame();
+    }
 }

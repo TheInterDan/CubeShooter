@@ -80,7 +80,7 @@ public static class GameManager {
         if (!gameStarted)
         {
             auto = autoPlay;
-            if(!auto) player.NewTarget(playerPositions[0].transform);
+            if (!auto) player.NewTarget(playerPositions[0].transform);
             SpawnWave();
             gameStarted = true;
             main.QuitTitle();

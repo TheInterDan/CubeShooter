@@ -14,5 +14,4 @@ public class Main : MonoBehaviour {
     {
         title.SetActive(false);
     }
-
 }
