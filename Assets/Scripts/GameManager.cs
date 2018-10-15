@@ -82,6 +82,7 @@ public static class GameManager {
             auto = autoPlay;
             CubeDestroyed();
             gameStarted = true;
+            main.QuitTitle();
         }
     }
 

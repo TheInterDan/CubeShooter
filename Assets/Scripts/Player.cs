@@ -23,7 +23,7 @@ public class Player : MonoBehaviour {
 
     void DetectInput()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (!GameManager.auto && Input.GetButtonDown("Fire1"))
         {
             if (GameManager.gameStarted)
             {

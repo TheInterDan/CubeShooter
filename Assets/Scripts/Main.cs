@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Main : MonoBehaviour {
 
+    public GameObject title;
 
-
-	void Start () {
+    void Start () {
         GameManager.main = this;
 	}
-	
-	void Update () {
-		
-	}
+
+    public void QuitTitle()
+    {
+        title.SetActive(false);
+    }
+
 }
