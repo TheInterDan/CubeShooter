@@ -79,6 +79,7 @@ public static class GameManager {
     {
         if (!gameStarted)
         {
+            Time.timeScale = 1;
             auto = autoPlay;
             if (!auto) player.NewTarget(playerPositions[0].transform);
             SpawnWave();
@@ -90,8 +91,14 @@ public static class GameManager {
     public static void EndGame()
     {
         gameStarted = false;
+        Time.timeScale = 0;
+        //aparece texto "game over" y "pulsa para reintentar"
+
+        if (Input.GetButtonDown("Fire1"))
+        {
         score = 0;
         SceneManager.LoadScene(0);
         auto = false;
+        }
     }
 }
