@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public static class GameManager {
 
+    public static Main main;
+
     public static Puntuacion puntuacion;
     static int score;
 
@@ -12,6 +14,9 @@ public static class GameManager {
     public static List<PlayerPosition> playerPositions = new List<PlayerPosition>();
 
     public static bool gameStarted = false;
+    public static bool auto = true;
+
+    public static Player player;
 
     public static int Score
     {
@@ -62,15 +67,22 @@ public static class GameManager {
                     positions.Add(playerPositions[i].instantiator);
                 }
             }
-                  
+
+            if (auto) {
+                player.NewTarget(playerPositions[randIndex].transform);
+            }
             cubeManager.SpawnCubes(positions);
         }
     }
 
-    public static void StartGame()
+    public static void StartGame(bool autoPlay = false)
     {
-        CubeDestroyed();
-        gameStarted = true;
+        if (!gameStarted)
+        {
+            auto = autoPlay;
+            CubeDestroyed();
+            gameStarted = true;
+        }
     }
 
     public static void EndGame()

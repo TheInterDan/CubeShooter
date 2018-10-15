@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
     private void Start()
     {
         destino = transform;
-        
+        GameManager.player = this;
     }
 
     void Update() {
@@ -45,6 +45,12 @@ public class Player : MonoBehaviour {
             }
         }
     }
+
+    public void NewTarget(Transform newTarget)
+    {
+        destino = newTarget;
+    }
+
     void Move()
     {
         this.transform.position = Vector3.Lerp(transform.position, destino.position, speed * Time.deltaTime);
