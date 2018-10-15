@@ -48,10 +48,10 @@ public static class GameManager {
     public static void DestroyCube(GameObject cube)
     {
         cubeManager.DestroyCube(cube);
-        CubeDestroyed();
+        SpawnWave();
     }
 
-    public static void CubeDestroyed()
+    public static void SpawnWave()
     {
         if (!cubeManager.AreStillCubes())
         {
@@ -67,11 +67,11 @@ public static class GameManager {
                     positions.Add(playerPositions[i].instantiator);
                 }
             }
+            cubeManager.SpawnCubes(positions);
 
             if (auto) {
                 player.NewTarget(playerPositions[randIndex].transform);
             }
-            cubeManager.SpawnCubes(positions);
         }
     }
 
@@ -80,7 +80,7 @@ public static class GameManager {
         if (!gameStarted)
         {
             auto = autoPlay;
-            CubeDestroyed();
+            SpawnWave();
             gameStarted = true;
             main.QuitTitle();
         }
